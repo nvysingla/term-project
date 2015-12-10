@@ -26,29 +26,30 @@ def thresholdImage(image):
 
 def removeExtraBoundingBoxes(rectList):
     newList=[]
-    print "in here"
+    
     for x,y,w,h in rectList:
         if (w*h>100 and w*h<=80000 and w<290 and h<290):
             newList.append((x,y,w,h))
     
     seenList=[newList[0]]
     j=0
-    print "start"
+    
     for i in range(1,len(newList)):
         print (newList[i],seenList)
         x1,y1,w1,h1=newList[i]
         x,y,w,h=seenList[len(seenList)-1]
         if((x<=x1 and x1<=(x+w) and y<=y1 and y1<=(y+h))):
             j+=1
-            print ("not appending")
+            
         else:
             seenList.append((x1,y1,w1,h1))
-            print "appending"
+            
         
-    print "outta here",j    
+        
     return seenList
 
 def resolveTies(bestMatch,ratioList,compareValues):
+    
     valuesToCheck={letter:0 for letter in bestMatch}
     for i in range(len(ratioList)):
         for checkLetter in bestMatch:
@@ -120,8 +121,7 @@ def checkLetter(ratioList):
                   "Y":[0.208888888889,0.100444444444,0.102933333333,0.154666666667,0.108977777778,0.1552,0.1584,0.1312,0.0922666666667,
                        0.202844444444,0.0878222222222,0.124622222222,0.171555555556,0.0904888888889,0.0906666666667,0.119822222222],
                   "Z":[0.0869333333333,0.0876444444444,0.113244444444,0.234311111111,0.141511111111,0.115733333333,0.127288888889,0.141155555556,
-                       0.181511111111,0.121066666667,0.0784,0.135111111111,0.115022222222,0.0823111111111,0.0894222222222,0.149866666667]
-                 
+                       0.181511111111,0.121066666667,0.0784,0.135111111111,0.115022222222,0.0823111111111,0.0894222222222,0.149866666667]                 
                   
                   }
     
@@ -136,6 +136,7 @@ def checkLetter(ratioList):
             if ratioList[i]>=0.5:
                 diffCounts=dict()
                 break
+            
     minCount=None
     bestMatch=[""]
     for letter in diffCounts:
@@ -172,10 +173,24 @@ def segmentImage(imarray):
             y=j*height/4
             newH=height/4
             newW=width/4
-            cv2.rectangle(imarray,(x,y),(x+newW,y+newH),(0,255,0),2)
-            segment=imarray[y:y+newH,x:x+newW]
-            cv2.imshow("segment"+str(k),segment)
-            blackPixels=int(totalSegPixels)-int(cv2.countNonZero(segment))
+            
+##            try :
+##                cv2.rectangle(imarray,(x+20,y+20),(x+newW-20,y+newH-20),(0,255,0),2)
+##                segment=imarray[y+20:y+newH-20,x+20:x+newW-20]
+##                segment=resizeImage(segment,(300/4,300/4))
+##                cv2.imshow("segment"+str(k),segment)
+##                totalSegPixels=(segment.shape[0]*segment.shape[1])
+##                print "adding 10 pixel"
+##            except:
+            
+            if True:
+                cv2.rectangle(imarray,(x,y),(x+newW,y+newH),(0,255,0),2)
+                segment=imarray[y:y+newH,x:x+newW]
+                cv2.imshow("segment"+str(k),segment)
+                print "Nope"
+                
+            
+            blackPixels=abs(int(totalSegPixels)-int(cv2.countNonZero(segment)))
             ratio=blackPixels*1.0/totalSegPixels*1.0
             print (cv2.countNonZero(segment))
             print (str(k)+" has "+str(ratio))
