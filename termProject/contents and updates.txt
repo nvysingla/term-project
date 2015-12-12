@@ -1,0 +1,44 @@
+Changes made to the project: (Deliverable-2 2/12/2015)
+
+1. Developed partial user interface and implemented using classes in UIversion2.py
+2. Developed partial working algorithm to obtain the bounding boxes per character in each image, 
+	and compare to a given set of test images in compare3.py
+3. From the previous submission, the function that uses a module to OCR has been added to UI.py
+4.The function to convert text to speech also added in UIversion2.py
+
+List of Items in the deliverable submission:
+
+######## MAIN FILES ##########
+
+UIversion2.py
+compare3.py
+
+######### EXTRAS ##############
+
+testimages folder : contains some of the images used to test the algorithm
+compare folder : contains the image set that is used for comparison
+Added Note: While submitting, I had to remove the two image folders for the file to be less than 10MB.
+timesheet.xlsx : a log of the time spent working on the project
+
+
+NOTE: the program will not work until the test images and the directory containing letter and number are in the same directory as the .py file.
+********************************************************************************************************************************************************************************************************
+
+Changes made to project (Deliverable-3 10/12/2015)
+
+1. Polished UI
+2. Algortithm with greater accuracy to detect handwritten text
+3. Combined all modules together
+
+List of items in the deliverable:
+
+timesheet.txt
+
+Design : main.docx, ideas.txt 
+Extras : timesheet.xlsx
+	 Scratch Work: compare3.py, trial3.py, segmenting3.py and segmenting.py
+Main Project Files: segmenting2.py, and UI version5.py
+
+
+List of items sent to Julia: video, testImages, Ideal Images, storyboard (via Google Drive)
+

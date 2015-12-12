@@ -1,0 +1,8 @@
+Basic Project Design and Brainstorming : 2
+Downloading and Installing Modules: 5
+Testing and Debugging the Program: 8
+Creating and Polishing User Interface: 5
+Designing and Coding Robust Algorithm: 25
+
+**Datewise data on time spent in Extras/timesheet.xlsx 
+

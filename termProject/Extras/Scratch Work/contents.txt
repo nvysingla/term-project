@@ -1,0 +1,6 @@
+compare3.py contains the last version of the pixel by pixel comparison methods to compare letters.
+segmenting and segmenting3.py contain the two differnt versions of the current algorithm.
+segmenting.py is the one without resizing and ties resolution.
+segemting3.py is the one which crops out 30 pixels from the bounding box border.
+trial3.py is the initial version of compare3.py
+thought process.txt- contains notes on algorithm development

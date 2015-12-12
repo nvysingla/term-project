@@ -1,0 +1,8 @@
+There were several ways I approached this problem and over the course of these three weeks, I modified my orginal algorithm significantly as listed below.
+
+1. Get the contours of the two images and compare the two images (onetobeguessed and the idealLetter) pixel by pixel.
+2. compare the image to be guessed to a set of 5 images for each letter, get the differing pixel values using the rms equaltion and then find the standard deviation for that. and if the image is more than one sd away from th emean, it is a false for that letter.
+3. compare each point to be in the radius of a given black point for the letter image.
+
+4.(Final):segemnt the images into 16 parts. for each part, get the black pixel content and return that which differs from the ideals by the lowest amount.
+

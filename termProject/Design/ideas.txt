@@ -1,0 +1,13 @@
+A Possible Future Revision Of The Algorithm: 
+1.	Loop through the image pixel by pixel and try to find a continuous trace of a letter. (If such a trace exists, it is a letter, else it is a garbage value.)
+2.	Remove all other black pixels, not in the trace.
+3.	Figure out a way to straighten the image (minimise rotation, maybe use skew?).
+4.	Find the centre of mass of the new image. Compare this to a set of COM’s representing the ideal COM’s. Eliminate some letters.
+5.	Then segment the image into parts (say 16 parts.) For each part, compare the shape or the intensity of black pixels.
+6.	Eliminate until the one with least differences is found.
+7.	For ties, compare pixel by pixel for only those values and return the best match.
+
+Other possible features to be considered:
+
+1. lines of symmetry,divide the image into segments based on lines of symmetry and depending on lines of symmetry, eliminate some letters.
+2. once a string is obtained, compare it to a given set of values in a dictionary and recurse through the probabilties to find the closest word in the dictionary.
