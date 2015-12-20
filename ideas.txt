@@ -2,4 +2,4 @@ trace the letter, get the trace points. Put on white bg, to remove other garbage
 for evry 5 black pixels consecutive horizontlly, rplace by one point.
 define each letter by a comb of shapes. do if the next point of A is at a particular angle from the previous point, keep going until out of range condition, then join first point ad last point make a line. Do for all, get the points of intersection of the other lines with lines. Identifyas A if 3 pairwise intersectionns.
 B is 3 vertices, two pair wise , one triplet wise.
-recurse thorugh an given dictionary of words to find best possible match, store probality of 10 best letters 
+recurse thorugh an given dictionary of words to find best possible match, store probability of 10 best letters 
